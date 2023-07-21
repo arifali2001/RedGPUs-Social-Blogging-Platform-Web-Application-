@@ -1,0 +1,19 @@
+.primary-bg{
+    background: #B2DFDB;
+}
+.tertiary-bg{
+    background: #009999;
+}
+.tb{
+    color: black;
+}
+.banner-background{
+               clip-path: polygon(52% 0, 100% 0, 100% 21%, 100% 100%, 80% 90%, 64% 100%, 35% 100%, 17% 90%, 0 100%, 0 0);
+  }
+  .secondary-bg{
+      background: #4DB6AC;
+  }
+  .forth-bg{
+      background: #999999;
+  }
+ 
