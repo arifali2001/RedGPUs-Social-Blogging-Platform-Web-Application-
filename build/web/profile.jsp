@@ -31,12 +31,36 @@
         <link href="css/cssfile1.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
+            .fbody{
+                height: 50px;
+            }
+            #footer_text{
+                font-family: 'Cutive Mono';
+            }
             body{
-                background:url(img/blur.jpg);
+                background:url(https://images.saymedia-content.com/.image/t_share/MTkzOTUzODU0MDkyODc5MzY1/particlesjs-examples.gif);
+                background-size: cover;
+                background-attachment: scroll;
+            }
+            body{
+                background:url(https://images.saymedia-content.com/.image/t_share/MTkzOTUzODU0MDkyODc5MzY1/particlesjs-examples.gif);
                 background-size: cover;
                 background-attachment: scroll;
             }
         </style>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+            />
+        <link href='https://fonts.googleapis.com/css?family=Cutive Mono' rel='stylesheet'>
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <style>
+
+
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -242,7 +266,7 @@
             <div class="container">
                 <div class="row mt-4">
                     <!--                    categories section-->
-                    <div class="col-md-2">
+                    <div class="col-md-1">
                         <div class="list-group">
                             <a href="#" onclick="getPosts(0,this)" class="c-link list-group-item list-group-item-action active">
                                 All
@@ -262,14 +286,15 @@
 
                     </div>
                     <!--main content-->
-                    <div class="col-md-8">
+                    <div class="col-md-10">
+                        <!-- PostContainer(Body) -->
                         <div class="container text-center" id="loader">
                             <i class="fa fa-circle-o-notch fa-2x fa-spin" style="color: grey"></i>
                             <h4 style="color: grey">Updating...</h4>
                                 
                             
                         </div>
-                        <div class="container-fluid" id="post_container">
+                        <div class="container-fluid overflow-y-auto" id="post_container" style="height: 750px;">
                             
                         </div>
 
@@ -530,5 +555,92 @@
             getPosts(0,allpostsbtn)
         })
         </script>
+        <div class="fbody">
+
+            <footer class="text-center text-white" style="background-color: #cc0033;">
+                <!-- Grid container -->
+                <div class="container pt-1" style="opacity: 80%;">
+                    <!-- Section: Social media -->
+                    <section class="mb-2">
+                        <!-- Hacker Rank -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="https://www.hackerrank.com/arifalinewcoc?hr_r=1"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                            ><i class="fab fa-hackerrank"></i
+                            ></a>
+
+                        <!-- Twitter -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="#!"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                            ><i class="fab fa-twitter"></i
+                            ></a>
+
+                        <!-- Google -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="https://accounts.google.com/v3/signin/identifier?dsh=S1761703121%3A1690026249757360&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=AeDOFXhfuJcN2uzCHt62DLF55fqfbZfmOWW8r5jOWXCDqiwKD9-SuIuxS_DrJMONwyK3RvYqTEArhA&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                            ><i class="fab fa-google"></i
+                            ></a>
+
+                        <!-- Instagram -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="https://www.instagram.com/arif_x64/?igshid=NGExMmI2YTkyZg%3D%3D"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                            ><i class="fab fa-instagram"></i
+                            ></a>
+
+                        <!-- Linkedin -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="https://www.linkedin.com/in/arifali630"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                            ><i class="fab fa-linkedin"></i
+                            ></a>
+                        <!-- Github -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="https://github.com/arifali2001"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                            ><i class="fab fa-github"></i
+                            ></a>
+                    </section>
+                    <!-- Section: Social media -->
+                    <!--    details of developer-->
+                    <div class="container text-center" >
+                        <p style="color: #333333; font-family: Cutive Mono; font-size: 12px; margin-bottom: -1%; margin-top: -1%;" ><strong>Query? Any Suggestion?        </strong><spam style='font-family: sans-serif;' class=' lineup'>  <strong>arifali630120@gmail.com</strong></spam><p>
+                                            <p style="color: #000000; font-family: Cutive Mono; font-size: 11px; margin: 0.1%; margin-bottom: 0.01%;" ><strong>(Beta Release v1.02)</p>
+                        
+
+                    </div>
+                </div>
+                <!-- Grid container -->
+
+                <!-- Copyright -->
+                <div class="text-light p-1" id="footer_text"  style="background-color: #333333;">
+                    © 2023 Copyright:
+                    <a class="text-light" style='text-decoration: none;' href="http://localhost:9494/Blogech/index.jsp"><span style="color: red;"><strong>Red</strong></span>GPUs</a>
+  
+                    <p style="font-family: Cutive Mono; font-size: 14px; margin-bottom: .5%;">Developed By:  <strong><a class='animate-charcter' style="color: #cc0033; text-decoration: none; " href='https://www.linkedin.com/in/arifali630'>Arif Ali</a></strong></p>
+      
+  
+                </div>
+                <!-- Copyright -->
+            </footer>
+
+        </div>
+
+        
     </body>
+    
 </html>

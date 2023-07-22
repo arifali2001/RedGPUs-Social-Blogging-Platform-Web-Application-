@@ -1,3 +1,4 @@
+<%@page import="com.blogech.dao.LikeDao"%>
 <%@page import="java.text.DateFormat"%>
 <%@page import="com.blogech.dao.UserDao"%>
 <%@page import="java.util.ArrayList"%>
@@ -17,8 +18,8 @@
 
 %>
 <%    int postid = Integer.parseInt(request.getParameter("post_id"));
-PostDao d=new PostDao(ConnectionProvider.getConnection());
-Post p=d.getPostByPostID(postid);
+    PostDao d = new PostDao(ConnectionProvider.getConnection());
+    Post p = d.getPostByPostID(postid);
 
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -26,20 +27,20 @@ Post p=d.getPostByPostID(postid);
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><%= p.getPtitle() %> | RedGPUs</title>
+        <title><%= p.getPtitle()%> | RedGPUs</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="css/cssfile1.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
             body{
-                background:url(img/blur.jpg);
+                background:url(https://images.saymedia-content.com/.image/t_share/MTkzOTUzODU0MDkyODc5MzY1/particlesjs-examples.gif);
                 background-size: cover;
                 background-attachment: scroll;
             }
             .post-tittle{
                 font-weight: 80;
                 font-size: 28px;
-                
+
             }
             .post-cont{
                 font-weight: 80;
@@ -51,12 +52,24 @@ Post p=d.getPostByPostID(postid);
             }
             .post-user{
                 font-family: inter;
-                
+
             }
-            .row-user{
-                border: 1px solid #666666
+            .fbody{
+                height: 50px;
             }
+            #footer_text{
+                font-family: 'Cutive Mono';
+            }
+            /*            .row-user{
+                            border: 1px solid #666666
+                        }*/
         </style>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+            />
+    <link href='https://fonts.googleapis.com/css?family=Cutive Mono' rel='stylesheet'>
+        
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -108,62 +121,77 @@ Post p=d.getPostByPostID(postid);
                 </div>
             </div>
         </nav>
-<!--        main content of the post-->
+        <!--        main content of the post-->
 
-<div class="container">
-    <div class="row my-4">
-        <div class="col-md-8 offset-md-2    ">
-            <div class="card">
-                <div class="card-header primary-bg">
-                    <h4 class="post-title"><%= p.getPtitle() %></h4>
-                    <p class="post-date"><%= DateFormat.getDateInstance().format(p.getPdate()) %></p>
-                    
-                </div>
-                    <div class="card-body">
-                        <img class="card-img-top" src="user_pmedia/<%= p.getPpic()%>" alt="Card image cap">
-                        <div class="row my-2 row-user ">
-                            <div class="col-md-8">
-                                <% UserDao ud= new UserDao(ConnectionProvider.getConnection()); %>
-                                <b><p class="post-user">Posted by <a href="#"><%= ud.getUserByUserId(p.getUserID()).getName() %></a></p></b>
-                                
-                            </div>
-                            <div class="col-md-4">
-                                
-                            </div>
-                            
+        <div class="container" style="width: auto">
+            <div class="row my-4">
+                <div class="col-md-8 offset-md-2    ">
+                    <div class="card">
+                        <div class="card-header forth-bg">
+                            <h4 style="color: #ffffff;" class="post-title"><%= p.getPtitle()%></h4>
+                            <p class="post-date" style="color: red;"><%= DateFormat.getDateInstance().format(p.getPdate())%></p>
+
                         </div>
-                        <p class="post-cont"><%= p.getPcontent() %></p>
-                        <br><!-- comment -->
-                        <div class="post-link">
-                           <pre><%= p.getPlink() %></pre> 
+                        <div class="card-body fift-bg">
+                            <img class="card-img-top" src="user_pmedia/<%= p.getPpic()%>" alt="Card image cap">
+                            <div class="row my-2 row-user ">
+                                <div class="col-md-8">
+                                    <% UserDao ud = new UserDao(ConnectionProvider.getConnection());%>
+                                    
+
+                                </div>
+                                <div class="col-md-4">
+
+                                </div>
+
+                            </div>
+                            <div class="card" style="width: auto">
+                                <div class="card-header">
+                                    <b><p class="post-user">Posted by <a href="#"><%= ud.getUserByUserId(p.getUserID()).getName()%></a></p></b>
+                                </div>
+                                <div class="card-body">
+                                    
+                                    <p class="card-text"><p class="post-cont"><%= p.getPcontent()%></p></p>
+                                    <div class="card-footer">
+                                        <p><span class="fa fa-location-arrow"></span>Links:</p>
+                                        <a href="<%= p.getPlink()%>"> <pre><%= p.getPlink()%></pre> </a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
-                        
-                        
-                    </div>
                         <div class="card-footer tertiary-bg text-center">
 
-                
-                <a href="#!" class="btn btn-outline-light btn-sm"><i class="fa fa-thumbs-up"></i><spam>11.4k</spam></a>
-                <a href="#!" class="btn btn-outline-light btn-sm"><i class="fa fa-commenting-o"></i><spam>112</spam></a>
+                            <%
+                                LikeDao l = new LikeDao(ConnectionProvider.getConnection());
+
+                            %>
+                            <a href="#!" onclick="doLike(<%= p.getPid()%>,<%= user.getId()%>)" class="btn btn-outline-light btn-sm"><i class="fa fa-thumbs-up"></i><spam class="like-counter"><%= l.countLikeofPost(p.getPid())%></spam></a>
+                            <a href="#!" class="btn btn-outline-light btn-sm"><i class="fa fa-commenting-o"></i><spam>112</spam></a>
+                           
+                          
+
+                        </div>
+
+                    </div>
+
+                </div>
+
 
             </div>
-                
-            </div>
-            
+
         </div>
-        
-        
-    </div>
-    
-</div>
+                            
 
 
-<!--        end of main content of the post-->
+        <!--        end of main content of the post-->
 
-        
-        
-        
-         <!-- Modal -->
+
+
+
+        <!-- Modal -->
         <div class="modal fade" id="profile_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -290,7 +318,7 @@ Post p=d.getPostByPostID(postid);
 
 
 
-       
+
 
 
 
@@ -366,32 +394,32 @@ Post p=d.getPostByPostID(postid);
             </div>
         </div>
         <!--       postmalend-->
-        
-        
-        
-        
-        
-        
-        
-        
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!--    javascript-->
         <script
             src="https://code.jquery.com/jquery-3.7.0.min.js"
@@ -403,24 +431,24 @@ Post p=d.getPostByPostID(postid);
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script>
-            $(document).ready(function () {
-                let editstatus = false;
-                $('#edit-profile-btn').click(function () {
-                    if (editstatus == false)
-                    {
-                        $('#profile-details').hide()
-                        $('#profile-edit').show();
-                        editstatus = true;
-                        $(this).text("Back")
-                    } else
-                    {
-                        $('#profile-details').show()
-                        $('#profile-edit').hide();
-                        editstatus = false;
-                        $(this).text("Edit")
-                    }
-                })
-            });
+                                $(document).ready(function () {
+                                    let editstatus = false;
+                                    $('#edit-profile-btn').click(function () {
+                                        if (editstatus == false)
+                                        {
+                                            $('#profile-details').hide()
+                                            $('#profile-edit').show();
+                                            editstatus = true;
+                                            $(this).text("Back")
+                                        } else
+                                        {
+                                            $('#profile-details').show()
+                                            $('#profile-edit').hide();
+                                            editstatus = false;
+                                            $(this).text("Edit")
+                                        }
+                                    })
+                                });
         </script>
 
 
@@ -515,31 +543,115 @@ Post p=d.getPostByPostID(postid);
                 </script>-->
 
         <script>
-            
-            
-            function getPosts(catid, cbtm){
+
+
+            function getPosts(catid, cbtm) {
                 $("#loader").show();
                 $("#post_container").hide();
                 $(".c-link").removeClass('active')
-                
+
                 $.ajax({
-                url: "load_posts.jsp",
-                data: {cid:catid},
-                success: function (data, textStatus, jqXHR) {
+                    url: "load_posts.jsp",
+                    data: {cid: catid},
+                    success: function (data, textStatus, jqXHR) {
                         console.log(data);
                         $("#loader").hide();
                         $("#post_container").show();
                         $('#post_container').html(data);
                         $(cbtm).addClass('active')
                     }
-            })
+                })
             }
-            
+
 //            Main content Loading (posts)
-        $(document).ready(function(e){
-            let allpostsbtn=$('.c-link')[0]
-            getPosts(0,allpostsbtn)
-        })
+            $(document).ready(function (e) {
+                let allpostsbtn = $('.c-link')[0]
+                getPosts(0, allpostsbtn)
+            })
         </script>
+        <div class="fbody">
+
+            <footer class="text-center text-white" style="background-color: #cc0033;">
+                <!-- Grid container -->
+                <div class="container pt-1" style="opacity: 80%;">
+                    <!-- Section: Social media -->
+                    <section class="mb-2">
+                        <!-- Hacker Rank -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="https://www.hackerrank.com/arifalinewcoc?hr_r=1"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                            ><i class="fab fa-hackerrank"></i
+                            ></a>
+
+                        <!-- Twitter -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="#!"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                            ><i class="fab fa-twitter"></i
+                            ></a>
+
+                        <!-- Google -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="https://accounts.google.com/v3/signin/identifier?dsh=S1761703121%3A1690026249757360&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=AeDOFXhfuJcN2uzCHt62DLF55fqfbZfmOWW8r5jOWXCDqiwKD9-SuIuxS_DrJMONwyK3RvYqTEArhA&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                            ><i class="fab fa-google"></i
+                            ></a>
+
+                        <!-- Instagram -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="https://www.instagram.com/arif_x64/?igshid=NGExMmI2YTkyZg%3D%3D"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                            ><i class="fab fa-instagram"></i
+                            ></a>
+
+                        <!-- Linkedin -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="https://www.linkedin.com/in/arifali630"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                            ><i class="fab fa-linkedin"></i
+                            ></a>
+                        <!-- Github -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="https://github.com/arifali2001"
+                            role="button"
+                            data-mdb-ripple-color="dark"
+                            ><i class="fab fa-github"></i
+                            ></a>
+                    </section>
+                    <!-- Section: Social media -->
+                    <!--    details of developer-->
+                    <div class="container text-center" >
+                        <p style="color: #333333; font-family: Cutive Mono; font-size: 12px; margin-bottom: -1%; margin-top: -1%;" ><strong>Query? Any Suggestion?        </strong><spam style='font-family: sans-serif;' class=' lineup'>  <strong>arifali630120@gmail.com</strong></spam><p>
+                                            <p style="color: #000000; font-family: Cutive Mono; font-size: 11px; margin: 0.1%; margin-bottom: 0.01%;" ><strong>(Beta Release v1.02)</p>
+                        
+
+                    </div>
+                </div>
+                <!-- Grid container -->
+
+                <!-- Copyright -->
+                <div class="text-light p-1" id="footer_text"  style="background-color: #333333;">
+                    © 2023 Copyright:
+                    <a class="text-light" style='text-decoration: none;' href="http://localhost:9494/Blogech/index.jsp"><span style="color: red;"><strong>Red</strong></span>GPUs</a>
+  
+                    <p style="font-family: Cutive Mono; font-size: 14px; margin-bottom: .5%;">Developed By:  <strong><a class='animate-charcter' style="color: #cc0033; text-decoration: none; " href='https://www.linkedin.com/in/arifali630'>Arif Ali</a></strong></p>
+      
+  
+                </div>
+                <!-- Copyright -->
+            </footer>
+
+        </div>
     </body>
 </html>

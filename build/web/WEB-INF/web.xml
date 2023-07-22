@@ -24,6 +24,14 @@
         <servlet-name>PostServlettwo</servlet-name>
         <servlet-class>com.blogech.servlets.PostServlettwo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LIkeServlet</servlet-name>
+        <servlet-class>com.blogech.servlets.LikeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LikeServlet</servlet-name>
+        <servlet-class>com.blogech.servlets.LikeServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
@@ -47,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>PostServlettwo</servlet-name>
         <url-pattern>/PostServlettwo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LIkeServlet</servlet-name>
+        <url-pattern>/LIkeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LikeServlet</servlet-name>
+        <url-pattern>/LikeServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

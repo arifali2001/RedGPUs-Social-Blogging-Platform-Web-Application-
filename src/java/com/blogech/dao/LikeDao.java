@@ -4,9 +4,9 @@
  */
 package com.blogech.dao;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.ResultSet;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 
 /**
@@ -18,11 +18,11 @@ public class LikeDao {
     public LikeDao(Connection con){
         this.con=con;
     }
-    public boolean dolike(int pid, int uid){
+    public boolean doLike(int pid, int uid){
         boolean f=false;
         try{
-            String q="insert into like(pid,uid)values(?,?)";
-            PreparedStatement p = (PreparedStatement) this.con.prepareStatement(q);
+            String q="insert into liked(pid,uid)values(?,?)";
+            PreparedStatement p = this.con.prepareStatement(q);
             p.setInt(1,pid);
             p.setInt(2,uid);
             p.executeUpdate();
@@ -36,11 +36,11 @@ public class LikeDao {
     public int countLikeofPost(int pid){
         
         int count=0;
-        String  q="select count(*) from like where pid=?";
+        String  q="select count(*) from liked where pid=?";
         try {
-           PreparedStatement p=(PreparedStatement) this.con.prepareStatement(q);
+           PreparedStatement p=this.con.prepareStatement(q);
            p.setInt(1,pid);
-           ResultSet set=(ResultSet) p.executeQuery();
+           ResultSet set=p.executeQuery();
            if(set.next()){
                count=set.getInt("count(*)");
            }
@@ -48,6 +48,40 @@ public class LikeDao {
             e.printStackTrace();
         }
         return count;
+        
+    }
+    public boolean isLikedByUser(int pid, int uid){
+        boolean f=false;
+        try {
+            String q="select * from liked where pid=? and uid=?";
+            PreparedStatement pt=this.con.prepareStatement(q);
+            pt.setInt(1,pid);
+            pt.setInt(2,uid);
+            ResultSet set= pt.executeQuery();
+            if(set.next()){
+                f=true;
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return f;
+    }
+    public boolean removeLike(int pid, int uid){
+        boolean f=false;
+        try {
+            PreparedStatement pt= this.con.prepareStatement("delete from liked where pid=? and uid=?");
+            pt.setInt(1, pid);
+            pt.setInt(2 , uid);
+            pt.executeUpdate();
+            f=true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        
+        return f;
         
     }
     
