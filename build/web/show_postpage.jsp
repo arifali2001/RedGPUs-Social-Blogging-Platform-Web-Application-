@@ -68,8 +68,8 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
             rel="stylesheet"
             />
-    <link href='https://fonts.googleapis.com/css?family=Cutive Mono' rel='stylesheet'>
-        
+        <link href='https://fonts.googleapis.com/css?family=Cutive Mono' rel='stylesheet'>
+
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -137,7 +137,7 @@
                             <div class="row my-2 row-user ">
                                 <div class="col-md-8">
                                     <% UserDao ud = new UserDao(ConnectionProvider.getConnection());%>
-                                    
+
 
                                 </div>
                                 <div class="col-md-4">
@@ -150,12 +150,12 @@
                                     <b><p class="post-user">Posted by <a href="#"><%= ud.getUserByUserId(p.getUserID()).getName()%></a></p></b>
                                 </div>
                                 <div class="card-body">
-                                    
+
                                     <p class="card-text"><p class="post-cont"><%= p.getPcontent()%></p></p>
                                     <div class="card-footer">
                                         <p><span class="fa fa-location-arrow"></span>Links:</p>
                                         <a href="<%= p.getPlink()%>"> <pre><%= p.getPlink()%></pre> </a>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -169,11 +169,12 @@
 
                             %>
                             <a href="#!" onclick="doLike(<%= p.getPid()%>,<%= user.getId()%>)" class="btn btn-outline-light btn-sm"><i class="fa fa-thumbs-up"></i><spam class="like-counter"><%= l.countLikeofPost(p.getPid())%></spam></a>
-                            <a href="#!" class="btn btn-outline-light btn-sm"><i class="fa fa-commenting-o"></i><spam>112</spam></a>
-                           
-                          
+                            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#commentmodal"><i class="fa fa-commenting-o"></i><spam>112</spam></button>
+
+
 
                         </div>
+                        
 
                     </div>
 
@@ -183,7 +184,28 @@
             </div>
 
         </div>
-                            
+                            <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal" id="commentmodal" tabindex="-1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Comments</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="commentbox"></div>
+                                            <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+                                            <script>commentBox('5650828769624064-proj')</script>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
 
 
         <!--        end of main content of the post-->
@@ -633,8 +655,8 @@
                     <!--    details of developer-->
                     <div class="container text-center" >
                         <p style="color: #333333; font-family: Cutive Mono; font-size: 12px; margin-bottom: -1%; margin-top: -1%;" ><strong>Query? Any Suggestion?        </strong><spam style='font-family: sans-serif;' class=' lineup'>  <strong>arifali630120@gmail.com</strong></spam><p>
-                                            <p style="color: #000000; font-family: Cutive Mono; font-size: 11px; margin: 0.1%; margin-bottom: 0.01%;" ><strong>(Beta Release v1.02)</p>
-                        
+                        <p style="color: #000000; font-family: Cutive Mono; font-size: 11px; margin: 0.1%; margin-bottom: 0.01%;" ><strong>(Beta Release v1.02)</p>
+
 
                     </div>
                 </div>
@@ -644,10 +666,10 @@
                 <div class="text-light p-1" id="footer_text"  style="background-color: #333333;">
                     © 2023 Copyright:
                     <a class="text-light" style='text-decoration: none;' href="http://localhost:9494/Blogech/index.jsp"><span style="color: red;"><strong>Red</strong></span>GPUs</a>
-  
+
                     <p style="font-family: Cutive Mono; font-size: 14px; margin-bottom: .5%;">Developed By:  <strong><a class='animate-charcter' style="color: #cc0033; text-decoration: none; " href='https://www.linkedin.com/in/arifali630'>Arif Ali</a></strong></p>
-      
-  
+
+
                 </div>
                 <!-- Copyright -->
             </footer>

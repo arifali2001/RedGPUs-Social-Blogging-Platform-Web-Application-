@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
 body{
-                background:url(https://media2.giphy.com/media/26ufo4EIIEdB8tX3y/giphy.gif?cid=ecf05e47x0wck1atq6maqxbj0t1p13qvieamxc8blx5nlw8t&ep=v1_gifs_search&rid=giphy.gif&ct=g);
+                background:url(https://i.pinimg.com/originals/84/d8/7e/84d87eb7e536135161c55887d878d44b.gif);
                 background-size: cover;
                 background-attachment: scroll;
             }
@@ -36,14 +36,14 @@ body{
     </head>
     <body>
         <%@include file="normalnav.jsp" %>
-        <main class="d-flex align-items-center" style="height: 70vh">
+        <main class="d-flex align-items-center" style="height: 70vh; font-family: Cutive Mono;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 offset-md-4">
                         <div class="card">
-                            <div class="card-header text-center secondary-bg">
+                            <div class="card-header text-center secondary-bg" id="logincard" >
                                 <br>
-                                <span class="fa fa-user-circle-o fa-3x"></span>
+                                <span class="fa fa-user-circle-o fa-3x fa-bounce"></span>
                                 <p class='lineup divine' ><strong>Login here</strong></p>
 
                             </div>
@@ -62,7 +62,7 @@ body{
                             
                             
                             %>
-                            <div class="card-body">
+                            <div class="card-body" id="logincard" >
                                 <form action="LoginServlet" method="POST">
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -78,7 +78,7 @@ body{
                                         <label class="form-check-label" for="exampleCheck1">Remember Me</label>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary btn-outline-dark primary-bg">Submit</button>
+                                    <button type="submit" class="btn btn-primary btn-outline-dark white-bg"><spam class='animate-charcter3'>Login</spam></button>
                                     <br>
                                     <div id="help" class="form-text">New User? <a><a href="registerpage.jsp" style="color:red">Create an Account</a></div>
 
@@ -167,7 +167,7 @@ body{
                     <!-- Section: Social media -->
                     <!--    details of developer-->
                     <div class="container text-center" >
-                        <p style="color: #333333; font-family: Cutive Mono; font-size: 12px; margin-bottom: -1%; margin-top: -1%;" ><strong>Query? Any Suggestion?        </strong><spam style='font-family: sans-serif;' class=' lineup'>  <strong>arifali630120@gmail.com</strong></spam><p>
+                            <p style="color: #333333; font-family: Cutive Mono; font-size: 12px; margin-bottom: -1%; margin-top: -1%;" ><strong>Query? Any Suggestion?        </strong><spam style='font-family: sans-serif;' class=' lineup'>  <strong>arifali630120@gmail.com</strong></spam><p>
                                             <p style="color: #000000; font-family: Cutive Mono; font-size: 11px; margin: 0.1%; margin-bottom: 0.01%;" ><strong>(Beta Release v1.02)</p>
                         
 

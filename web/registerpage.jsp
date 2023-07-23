@@ -11,7 +11,7 @@
     </head>
     <style>
         body{
-                background:url(https://media2.giphy.com/media/26ufo4EIIEdB8tX3y/giphy.gif?cid=ecf05e47x0wck1atq6maqxbj0t1p13qvieamxc8blx5nlw8t&ep=v1_gifs_search&rid=giphy.gif&ct=g);
+                background:url(https://i.pinimg.com/originals/84/d8/7e/84d87eb7e536135161c55887d878d44b.gif);
                 background-size: cover;
                 background-attachment: scroll;
             }
@@ -29,13 +29,13 @@
     <link href='https://fonts.googleapis.com/css?family=Cutive Mono' rel='stylesheet'>
     <body>
         <%@include file="normalnav.jsp" %>
-        <main class=" p-5">
-            <div class="container">
+        <main class=" p-3" style="font-family: Cutive Mono;">
+            <div class="container" >
                 <div class="col-md-6 offset-md-3">
-                    <div class="card">
-                        <div class="card-header text-center secondary-bg">
+                    <div class="card" >
+                        <div class="card-header text-center secondary-bg" id="logincard" >
                             <br>
-                            <span class="fa fa-user-plus fa-3x" style=""></span>
+                            <span class="fa fa-user-plus fa-3x fa-bounce" style=""></span>
                             <p class="lineup divine" ><strong>Register here</strong></p>
 
                         </div>
@@ -76,7 +76,7 @@
                                     <h6>Signing Up...</h6>
                                 </div>
                                 
-                                <button id="submitbtn" type="submit" class="btn btn-primary btn-outline-dark primary-bg">Submit</button>
+                                <button id="submitbtn" type="submit" class="btn btn-primary btn-outline-dark primary-bg animate-charcter3">SignUp</button>
                                 <br>
                                 <div id="help" class="form-text">Already a user? <a><a href="loginpage.jsp" style="color:red">Login</a></div>
                             </form>
