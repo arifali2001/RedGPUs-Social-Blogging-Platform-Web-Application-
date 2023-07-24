@@ -39,7 +39,8 @@ Java, Python, C/C++, MySql, HTML, CSS, Servlet, JSP, Ajax, Bootstrap, Figma, Ble
 
 ## Screenshots
 
-![redgpushome](https://github.com/arifali2001/RedGPUs-Social-Blogging-Platform-Web-Application-/assets/95292682/f779225e-4578-4bdf-a8e1-22db583088b5)
+![redgpusprofile](https://github.com/arifali2001/RedGPUs-Social-Blogging-Platform-Web-Application-/assets/95292682/e7c84c59-39a0-4197-98a0-12c7cead9db3)
+
 
 
 
