@@ -40,13 +40,9 @@
             body{
                 background:url(https://images.saymedia-content.com/.image/t_share/MTkzOTUzODU0MDkyODc5MzY1/particlesjs-examples.gif);
                 background-size: cover;
-                background-attachment: scroll;
+                
             }
-            body{
-                background:url(https://images.saymedia-content.com/.image/t_share/MTkzOTUzODU0MDkyODc5MzY1/particlesjs-examples.gif);
-                background-size: cover;
-                background-attachment: scroll;
-            }
+           
         </style>
         <link
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -294,7 +290,7 @@
                                 
                             
                         </div>
-                        <div class="container-fluid overflow-y-auto" id="post_container" style="height: 750px;">
+                        <div class="container-fluid overflow-y-auto" id="post_container" style="height: 750px; border-radius: 2%;">
                             
                         </div>
 
